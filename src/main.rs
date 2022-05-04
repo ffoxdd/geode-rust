@@ -35,8 +35,7 @@ fn save_svg(dla: DLA) {
     let mut document = Document::new().set("viewBox", (-50, -50, 100, 100));
 
     for particle in &dla.particles {
-        // TODO: fix clone (work around #add consuming self issue)
-        document = document.clone().add(circle(particle));
+        document = document.add(circle(particle));
     }
 
     svg::save("data/image.svg", &document).unwrap();
