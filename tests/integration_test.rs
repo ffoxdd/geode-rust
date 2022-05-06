@@ -1,6 +1,7 @@
 use geode::{Dla, Particle};
 
-fn main() {
+#[test]
+fn it_builds_a_dla() {
     let seed_particles = vec![Particle {
         x: 0.0,
         y: 0.0,
@@ -9,5 +10,5 @@ fn main() {
 
     let dla = Dla::new(seed_particles);
 
-    geode::save_dla_svg(dla);
+    assert_eq!(dla.particles.len(), 1);
 }
